@@ -1,3 +1,4 @@
+// page.tsx (Updated /cards/add)
 "use client";
 
 import React, { useState } from "react";
@@ -44,8 +45,7 @@ export default function Page() {
           throw new Error(`Failed to generate flashcards: ${errorText}`);
         }
 
-        const flashcards = await response.json();
-        localStorage.setItem("flashcards", JSON.stringify(flashcards));
+        // Redirect to /cards
         router.push('/cards');
       } catch (error) {
         console.error("Error generating flashcards:", error);
